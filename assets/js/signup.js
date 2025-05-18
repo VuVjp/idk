@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem("userLoggedIn") === "true") {
         alert("Bạn đã đăng nhập, không thể truy cập trang này!");
-        window.location.href = "index.html"; // Chuyển về trang chính
+        window.location.href = "index.html"; 
     }
 });
 
@@ -14,8 +14,7 @@ function registerUser() {
     let users = JSON.parse(localStorage.getItem("users")) || [];
 
     // Kiểm tra tài khoản đã tồn tại chưa
-    const userExists = users.some(user => user.username === username);
-    if (userExists) {
+    if (users.some(user => user.username === username)) {
         alert("Tên người dùng đã tồn tại! Vui lòng chọn tên khác.");
         return;
     }
@@ -26,28 +25,16 @@ function registerUser() {
         return;
     }
 
-    // Mã hóa mật khẩu trước khi lưu (giả lập)
-    const hashedPassword = btoa(password); // Mã hóa bằng Base64 (có thể thay thế bằng thuật toán mạnh hơn)
-
-    users.push({ username, email, password: hashedPassword });
+    // Lưu mật khẩu trực tiếp vào localStorage (KHÔNG MÃ HÓA)
+    users.push({ username, email, password }); 
     localStorage.setItem("users", JSON.stringify(users));
 
     alert("Tạo tài khoản thành công!");
-    window.location.href = "login.html"; // Chuyển hướng sau khi đăng ký
+    window.location.href = "login.html"; 
 }
 
+// Chỉ sử dụng **một** sự kiện submit
 document.getElementById("registerForm").addEventListener("submit", function (e) {
     e.preventDefault();
     registerUser();
 });
-
-document.getElementById("registerForm").addEventListener("submit", function (event) {
-        if (password.value !== confirmPassword.value) {
-            event.preventDefault();
-            confirmPassword.classList.add("is-invalid");
-            confirmFeedback.textContent = "Mật khẩu không trùng khớp!";
-        } else {
-            confirmPassword.classList.remove("is-invalid");
-        }
-    });
-

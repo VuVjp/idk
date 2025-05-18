@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <title>Chính sách - MaestVN</title>
+    <title>Giỏ hàng - MaestVN Shop</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
 </head>
 
 <body>
@@ -49,24 +48,21 @@
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
+                        <ul class="nav" id="navMenu">
                             <li><a href="index.html">Trang chủ</a></li>
                             <li><a href="shop.html">Cửa Hàng</a></li>
                             <li><a href="news.html">Tin tức</a></li>
-                            <li><a href="privacy.html" class="active">Chính sách</a></li>
+                            <li><a href="privacy.html"class="active">Chính sách</a></li>
                             <li><a href="aboutus.html">Về chúng tôi</a></li>
                             <li><a href="contact.html">Liên hệ với chúng tôi</a></li>
                             <li class="nav-item position-relative" style="width: 70px; height: 40px;">
-                                <a href="#" id="cart-icon"
+                                <a href="cart.html" id="cart-icon"
                                     class="nav-link d-flex align-items-center justify-content-center p-0 w-100 h-100 position-relative">
                                     <i class="fa fa-shopping-cart fa-lg"></i>
-                                    <span id="cart-count" class="badge bg-danger rounded-circle position-absolute"
-                                        style="top: 2px; right: 2px; font-size: 10px; min-width: 16px; height: 16px; line-height: 16px; text-align: center;">
-                                        0
-                                    </span>
+                                    <span id="cart-count" class="badge bg-danger rounded-circle position-absolute"></span>
                                 </a>
                             </li>
-                            <li><a href="login.html">Đăng nhập</a></li>
+                            <li id="loginNav"><a href="login.html">Đăng nhập</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -78,7 +74,6 @@
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-
     <div class="page-heading header-text">
         <div class="container">
             <div class="row">
@@ -92,27 +87,27 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 align-self-center offset-lg-2">
-                <div class="caption header-text">
+                <div class="caption header-text privacy-custom">
                     <style>
-                        h6 {
+                        .privacy-custom h6 {
                             padding-top: 10vh;
                             color: red;
                         }
 
-                        h2 {
+                        .privacy-custom h2 {
                             padding-top: 10px;
                         }
 
-                        h4 {
+                        .privacy-custom h4 {
                             padding-top: 20px;
                         }
 
-                        p {
+                        .privacy-custom p {
                             margin-top: 10px;
                             margin-left: 20px;
                         }
 
-                        ul {
+                        .privacy-custom ul {
                             margin-left: 40px;
                         }
                     </style>
@@ -189,6 +184,7 @@
             </div>
         </div>
     </div>
+
     <footer>
         <div class="container">
             <div class="col-lg-12">
@@ -214,6 +210,7 @@
             </div>
         </div>
     </footer>
+
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -222,6 +219,9 @@
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/counter.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/cart.js"></script>
+
 
 </body>
 

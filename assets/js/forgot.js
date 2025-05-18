@@ -12,7 +12,7 @@ document.getElementById("forgotPasswordForm").addEventListener("submit", functio
     const foundUser = users.find(user => user.username === username && user.email === email);
 
     if (foundUser) {
-        alert("Yêu cầu đặt lại mật khẩu đã được gửi!");
+        alert(`Mật khẩu của bạn là: ${foundUser.password}`); // Hiển thị mật khẩu (giả lập)
     } else {
         alert("Tên người dùng hoặc email không đúng!");
     }

@@ -7,7 +7,7 @@
   <title>Trang cửa hàng - MaetsVN</title>
 
   <!-- Bootstrap -->
- 
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -39,11 +39,14 @@
       <div class="row">
         <div class="col-12">
           <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
             <a href="index.html" class="logo">
-              <img src="assets/images/logo.png" alt="Logo" style="width: 158px" />
+              <img src="assets/images/logo.png" alt="" style="width: 158px;">
             </a>
-            <ul class="nav align-items-center">
-              <li><a href="index.html">trang chủ</a></li>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav" id="navMenu">
+              <li><a href="index.html">Trang chủ</a></li>
               <li><a href="shop.html" class="active">Cửa Hàng</a></li>
               <li><a href="news.html">Tin tức</a></li>
               <li><a href="privacy.html">Chính sách</a></li>
@@ -53,17 +56,17 @@
                 <a href="cart.html" id="cart-icon"
                   class="nav-link d-flex align-items-center justify-content-center p-0 w-100 h-100 position-relative">
                   <i class="fa fa-shopping-cart fa-lg"></i>
-                  <span id="cart-count" class="badge bg-danger rounded-circle position-absolute"
-                    style="top: 2px; right: 2px; font-size: 10px; min-width: 16px; height: 16px; line-height: 16px; text-align: center;">
-                    0
+                  <span id="cart-count" class="badge bg-danger rounded-circle position-absolute"></span>
                   </span>
                 </a>
               </li>
-              <li><a href="login.html">Đăng nhập</a></li>
+              <li id="loginNav"><a href="login.html">Đăng nhập</a></li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
             </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
         </div>
       </div>
     </div>
@@ -96,6 +99,10 @@
               <li><a class="dropdown-item filter-btn" href="#" data-filter="adv">Phiêu lưu</a></li>
               <li><a class="dropdown-item filter-btn" href="#" data-filter="str">Chiến thuật</a></li>
               <li><a class="dropdown-item filter-btn" href="#" data-filter="nd">Hành động</a></li>
+              <li><a class="dropdown-item filter-btn" href="#" data-filter="sports">Thể thao</a></li>
+              <li><a class="dropdown-item filter-btn" href="#" data-filter="rpg">Nhập vai</a></li>
+              <li><a class="dropdown-item filter-btn" href="#" data-filter="horror">Kinh dị</a></li>
+              <li><a class="dropdown-item filter-btn" href="#" data-filter="sim">Mô phỏng</a></li>
             </ul>
           </div>
         </div>
