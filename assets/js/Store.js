@@ -31,10 +31,10 @@ function renderGames() {
       switch (currentPriceFilter) {
         case "free": return price === 0;
         case "20000": return price > 0 || price <= 20000;
-        case "50000": return price < 50000;
-        case "100000": return price >= 50000 && price <= 100000;
-        case "200000": return price >= 100000 && price <= 200000;
-        case "more": return price > 200000;
+        case "50000": return price >= 50000 && price <= 100000;
+        case "100000": return price >= 100000 && price <= 200000;
+        case "200000": return price >= 200000 && price <= 500000;
+        case "more": return price > 500000;
         default: return true;
       }
     });
