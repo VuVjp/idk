@@ -7,7 +7,7 @@ const games = [
     price: 690000,
     oldPrice: 890000,
     description: "Trò chơi bắn súng góc nhìn thứ nhất với các chiến dịch quân sự chân thực và kịch tính.",
-    filterClass: ["nd", "str", "sim"]
+    filterClass: ["act", "str", "sim"]
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const games = [
     price: 790000,
     oldPrice: 1000000,
     description: "Hành trình phiêu lưu qua các nền văn minh cổ đại với lối chơi hành động lén lút đặc trưng.",
-    filterClass: ["adv", "nd", "rpg"]
+    filterClass: ["adv", "act", "rpg"]
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const games = [
     price: 440000,
     oldPrice: 440000,
     description: "Một game hành động độc đáo với cơ chế phân thân và lựa chọn nhánh truyện hấp dẫn.",
-    filterClass: ["nd", "adv"]
+    filterClass: ["act", "adv"]
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const games = [
     price: 780000,
     oldPrice: 780000,
     description: "Tái hiện lịch sử Trung Âu thời Trung cổ với gameplay nhập vai chân thực và không có phép thuật.",
-    filterClass: ["rpg", "sim", "nd"]
+    filterClass: ["rpg", "sim", "act"]
   },
   {
     id: 7,
@@ -87,7 +87,7 @@ const games = [
     price: 310000,
     oldPrice: 310000,
     description: "Một game sinh tồn kinh dị trong không gian tối tăm, đầy căng thẳng và bí ẩn.",
-    filterClass: ["horror", "sur", "nd"]
+    filterClass: ["horror", "sur", "act"]
   },
   {
     id: 10,
@@ -97,7 +97,7 @@ const games = [
     price: 690000,
     oldPrice: 850000,
     description: "Game bắn súng phối hợp góc nhìn thứ ba, nơi bạn chiến đấu vì nền dân chủ siêu cấp chống lại các chủng loài ngoài hành tinh.",
-    filterClass: ["nd", "str", "sim"]
+    filterClass: ["act", "str", "sim"]
   },
   {
     id: 11,
@@ -107,7 +107,7 @@ const games = [
     price: 0,
     oldPrice: 320000,
     description: "Trận chiến sinh tồn 100 người chơi đầy căng thẳng, nơi kẻ sống sót cuối cùng sẽ chiến thắng.",
-    filterClass: ["nd", "sur", "sports"]
+    filterClass: ["act", "sur", "sports"]
   },
   {
     id: 12,
@@ -117,7 +117,7 @@ const games = [
     price: 320000,
     oldPrice: 440000,
     description: "Bắt đầu từ hai bàn tay trắng, người chơi phải xây dựng, sinh tồn và chiến đấu trong một thế giới khắc nghiệt.",
-    filterClass: ["sur", "nd", "sim"]
+    filterClass: ["sur", "act", "sim"]
   },
   {
     id: 13,
@@ -157,7 +157,7 @@ const games = [
   price: 890000,
   oldPrice: 1050000,
   description: "Leon S. Kennedy trở lại trong phiên bản làm lại của tựa game kinh dị sinh tồn huyền thoại với đồ họa hiện đại.",
-  filterClass: ["nd", "horror"]
+  filterClass: ["act", "horror"]
 },
 {
   id: 17,
@@ -167,7 +167,7 @@ const games = [
   price: 490000,
   oldPrice: 640000,
   description: "Phần tiếp theo của siêu phẩm hành động roguelike, nơi bạn nhập vai em gái của Hades trong cuộc chiến với thần Titan.",
-  filterClass: ["nd", "rpg"]
+  filterClass: ["act", "rpg"]
 },
 {
   id: 18,
@@ -177,7 +177,7 @@ const games = [
   price: 450000,
   oldPrice: 580000,
   description: "Kế thừa tinh thần của The Forest, trò chơi đưa bạn vào thế giới sinh tồn đầy rùng rợn và bí ẩn trên hòn đảo hoang.",
-  filterClass: ["sur", "horror", "nd"]
+  filterClass: ["sur", "horror", "act"]
 },
 { 
   id: 19,
@@ -197,7 +197,7 @@ const games = [
   price: 760000,
   oldPrice: 950000,
   description: "Thành phố đêm rực rỡ với lối chơi nhập vai sâu sắc và các nhiệm vụ mang tính điện ảnh cao.",
-  filterClass: ["nd", "rpg"]
+  filterClass: ["act", "rpg"]
 },
 {
   id: 21,
@@ -207,7 +207,7 @@ const games = [
   price: 890000,
   oldPrice: 1100000,
   description: "Một thế giới mở rộng lớn đầy thử thách, nơi bạn phải chiến đấu và khám phá những bí ẩn cổ xưa.",
-  filterClass: ["rpg", "nd", "adv"]
+  filterClass: ["rpg", "act", "adv"]
 },
 {
   id: 22,
@@ -257,7 +257,7 @@ const games = [
   price: 790000,
   oldPrice: 920000,
   description: "Một thế giới hậu tận thế tràn ngập zombie, nơi parkour và chiến đấu sinh tồn là chìa khóa để sống sót.",
-  filterClass: ["nd", "horror", "sur"]
+  filterClass: ["act", "horror", "sur"]
 },
 {
   id: 27,
@@ -277,7 +277,7 @@ const games = [
   price: 850000,
   oldPrice: 1060000,
   description: "Hành trình cao bồi huyền thoại trong thế giới mở sống động và đầy chân thực.",
-  filterClass: ["nd", "adv", "sim"]
+  filterClass: ["act", "adv", "sim"]
 },
 {
   id: 29,
@@ -287,7 +287,7 @@ const games = [
   price: 390000,
   oldPrice: 490000,
   description: "Phần tiếp theo của siêu phẩm metroidvania với thế giới ngầm sâu thẳm và các pha hành động mãn nhãn.",
-  filterClass: ["adv", "nd"]
+  filterClass: ["adv", "act"]
 },
 {
   id: 30,
@@ -307,7 +307,7 @@ const games = [
   price: 990000,
   oldPrice: 1190000,
   description: "Chiến đấu bảo vệ quê hương Tsushima trong một thế giới Nhật Bản cổ đại đầy nghệ thuật và samurai.",
-  filterClass: ["nd", "adv"]
+  filterClass: ["act", "adv"]
 },
 {
   id: 32,
@@ -347,7 +347,7 @@ const games = [
   price: 790000,
   oldPrice: 920000,
   description: "Trò chơi bắn súng viễn tưởng trong một Liên Xô giả tưởng đầy rẫy robot và bí ẩn rùng rợn.",
-  filterClass: ["nd", "horror", "sim"]
+  filterClass: ["act", "horror", "sim"]
 },
 {
   id: 36,
@@ -367,7 +367,7 @@ const games = [
   price: 860000,
   oldPrice: 1050000,
   description: "Theo chân hai anh em trong cuộc hành trình sinh tồn giữa thời kỳ bệnh dịch kinh hoàng ở châu Âu.",
-  filterClass: ["adv", "nd"]
+  filterClass: ["adv", "act"]
 },
 {
   id: 38,
@@ -377,7 +377,7 @@ const games = [
   price: 490000,
   oldPrice: 640000,
   description: "Trở thành cướp biển tự do, khám phá đại dương, tìm kho báu và chiến đấu với sinh vật huyền thoại.",
-  filterClass: ["sim", "adv", "nd"]
+  filterClass: ["sim", "adv", "act"]
 },
 {
   id: 39,
@@ -387,7 +387,7 @@ const games = [
   price: 840000,
   oldPrice: 990000,
   description: "Một phiên bản đen tối và gothic của câu chuyện Pinocchio với lối chơi soulslike đầy thử thách.",
-  filterClass: ["nd", "rpg"]
+  filterClass: ["act", "rpg"]
 },
 {
   id: 40,
@@ -407,7 +407,7 @@ const games = [
   price: 890000,
   oldPrice: 1120000,
   description: "Sinh tồn giữa thế giới khủng long đầy nguy hiểm với đồ họa nâng cấp hoàn toàn.",
-  filterClass: ["sur", "nd", "sim"]
+  filterClass: ["sur", "act", "sim"]
 },
 {
   id: 42,
@@ -437,7 +437,7 @@ const games = [
   price: 690000,
   oldPrice: 890000,
   description: "Trò chơi siêu nhiên độc đáo với lối chơi hấp dẫn và môi trường bí ẩn đầy năng lực siêu nhiên.",
-  filterClass: ["nd", "horror"]
+  filterClass: ["act", "horror"]
 },
 {
   id: 45,
@@ -497,7 +497,7 @@ const games = [
     price: 600000,
     oldPrice: 800000,
     description: "Trận chiến sinh tử chống lại quái vật địa ngục với gameplay nhanh và mãn nhãn.",
-    filterClass: ["nd", "adv"]
+    filterClass: ["act", "adv"]
   },
   {
     id: 51,
@@ -517,7 +517,7 @@ const games = [
     price: 0,
     oldPrice: 0,
     description: "Game bắn súng chiến thuật nhiều người chơi với các nhân vật có kỹ năng độc đáo.",
-    filterClass: ["nd","sports"]
+    filterClass: ["act","sports"]
   },
   {
     id: 53,
@@ -527,7 +527,7 @@ const games = [
     price: 700000,
     oldPrice: 950000,
     description: "Một trải nghiệm phiêu lưu kỳ lạ và đầy cảm xúc trong thế giới hậu tận thế.",
-    filterClass: ["adv", "sim", "nd"]
+    filterClass: ["adv", "sim", "act"]
   },
   {
     id: 54,
@@ -537,7 +537,7 @@ const games = [
     price: 650000,
     oldPrice: 800000,
     description: "Tiếp tục câu chuyện kinh dị sống còn với đồ họa và âm thanh sống động.",
-    filterClass: ["horror", "nd", "adv"]
+    filterClass: ["horror", "act", "adv"]
   },
   {
     id: 55,
@@ -547,7 +547,7 @@ const games = [
     price: 480000,
     oldPrice: 600000,
     description: "Cuộc phiêu lưu của Lara Croft trong hành trình tìm kiếm sự thật và sinh tồn nguy hiểm.",
-    filterClass: ["adv", "nd"]
+    filterClass: ["adv", "act"]
   },
   {
     id: 56,
@@ -557,7 +557,7 @@ const games = [
     price: 600000,
     oldPrice: 750000,
     description: "Game hành động chặt chém khó nhằn lấy bối cảnh Nhật Bản thời phong kiến.",
-    filterClass: ["nd", "adv"]
+    filterClass: ["act", "adv"]
   },
   {
     id: 57,
@@ -567,7 +567,7 @@ const games = [
     price: 850000,
     oldPrice: 1000000,
     description: "Bộ ba game nhập vai khoa học viễn tưởng kinh điển với nhiều lựa chọn cốt truyện.",
-    filterClass: ["rpg", "nd", "adv"]
+    filterClass: ["rpg", "act", "adv"]
   },
   {
     id: 58,
@@ -587,7 +587,7 @@ const games = [
     price: 400000,
     oldPrice: 500000,
     description: "Một câu chuyện cảm động với gameplay platformer tuyệt đẹp và lôi cuốn.",
-    filterClass: ["adv", "rpg", "nd"]
+    filterClass: ["adv", "rpg", "act"]
   },
   {
     id: 60,
@@ -597,7 +597,7 @@ const games = [
     price: 530000,
     oldPrice: 700000,
     description: "Khám phá vùng đất hậu tận thế trong một thế giới mở rộng lớn và nguy hiểm.",
-    filterClass: ["nd", "sur", "adv"]
+    filterClass: ["act", "sur", "adv"]
   },
   {
     id: 61,
@@ -607,7 +607,7 @@ const games = [
     price: 520000,
     oldPrice: 700000,
     description: "Game nhập vai khoa học viễn tưởng với lối chơi tự do và cốt truyện hấp dẫn.",
-    filterClass: ["rpg", "adv", "nd"]
+    filterClass: ["rpg", "adv", "act"]
   },
   {
     id: 62,
@@ -627,7 +627,7 @@ const games = [
     price: 350000,
     oldPrice: 400000,
     description: "Game platformer với phong cách hoạt hình cổ điển và gameplay khó nhằn.",
-    filterClass: ["nd", "adv"]
+    filterClass: ["act", "adv"]
   },
   {
     id: 64,
@@ -637,7 +637,7 @@ const games = [
     price: 300000,
     oldPrice: 350000,
     description: "Game platformer thử thách cao với câu chuyện cảm động về sự vượt lên bản thân.",
-    filterClass: ["nd", "adv"]
+    filterClass: ["act", "adv"]
   },
   {
     id: 65,
@@ -667,7 +667,7 @@ const games = [
     price: 350000,
     oldPrice: 450000,
     description: "Game metroidvania với lối chơi khám phá sâu rộng và phong cách nghệ thuật tuyệt đẹp.",
-    filterClass: ["nd", "adv"]
+    filterClass: ["act", "adv"]
   },
   {
     id: 68,
@@ -697,7 +697,7 @@ const games = [
     price: 450000,
     oldPrice: 600000,
     description: "Game hành động tốc độ cao, parkour kết hợp chặt chém trong thế giới cyberpunk.",
-    filterClass: ["nd", "adv"]
+    filterClass: ["act", "adv"]
   },
   {
     id: 71,
@@ -707,7 +707,7 @@ const games = [
     price: 320000,
     oldPrice: 400000,
     description: "Tiền thân của Ori and the Will of the Wisps, game platformer đầy cảm xúc và nghệ thuật.",
-    filterClass: ["adv", "nd"]
+    filterClass: ["adv", "act"]
   },
   {
     id: 72,
@@ -737,7 +737,7 @@ const games = [
     price: 250000,
     oldPrice: 300000,
     description: "DLC mới của Cuphead với những màn boss đầy thử thách và đồ họa hoạt hình đẹp mắt.",
-    filterClass: ["nd"]
+    filterClass: ["act"]
   },
   {
       id: 75,
@@ -777,7 +777,7 @@ const games = [
     price: 700000,
     oldPrice: 850000,
     description: "Game nhập vai hành động với cốt truyện hấp dẫn và đồ họa anime tuyệt đẹp.",
-    filterClass: ["rpg", "adv", "nd"]
+    filterClass: ["rpg", "adv", "act"]
   },
   {
     id: 79,
@@ -787,7 +787,7 @@ const games = [
     price: 600000,
     oldPrice: 750000,
     description: "Game hành động nhập vai khó nhằn với thế giới tối tăm và lối chơi thách thức.",
-    filterClass: ["nd", "rpg", "adv"]
+    filterClass: ["act", "rpg", "adv"]
   },
   {
       id: 80,
@@ -797,7 +797,7 @@ const games = [
       price: 550000,
       oldPrice: 650000,
       description: "Bạn vào vai một con quạ thu thập linh hồn, chiến đấu qua những vùng đất kỳ lạ với lối chơi hành động chặt chém kết hợp giải đố.",
-      filterClass: ["nd", "adv"]
+      filterClass: ["act", "adv"]
   },
   {
       id: 81,
@@ -827,7 +827,7 @@ const games = [
     price: 550000,
     oldPrice: 700000,
     description: "Game phiêu lưu hành động với cốt truyện hài hước và phong cách nghệ thuật độc đáo.",
-    filterClass: ["adv", "nd"]
+    filterClass: ["adv", "act"]
   },
   {
     id: 84,
@@ -837,7 +837,7 @@ const games = [
     price: 600000,
     oldPrice: 750000,
     description: "Truyền thuyết săn quái vật mở rộng với nhiều con thú và môi trường đa dạng.",
-    filterClass: ["nd", "rpg", "adv"]
+    filterClass: ["act", "rpg", "adv"]
   },
   {
     id: 85,
@@ -877,7 +877,7 @@ const games = [
     price: 250000,
     oldPrice: 320000,
     description: "Game hành động góc nhìn top-down với nhịp độ nhanh và phong cách neon độc đáo.",
-    filterClass: ["nd", "adv"]
+    filterClass: ["act", "adv"]
   },
   {
     id: 89,
@@ -897,7 +897,7 @@ const games = [
     price: 550000,
     oldPrice: 700000,
     description: "Tựa game bắn súng góc nhìn thứ ba pha, nơi bạn vào vai Selene — một phi hành gia mắc kẹt trong vòng lặp thời gian.",
-    filterClass: ["nd"]
+    filterClass: ["act"]
       },
   {
     id: 91,
@@ -907,7 +907,7 @@ const games = [
     price: 650000,
     oldPrice: 800000,
     description: "Game nhập vai turn-based với cốt truyện phong phú và cơ chế chiến đấu đa dạng.",
-    filterClass: ["rpg", "nd", "adv"]
+    filterClass: ["rpg", "act", "adv"]
   },
   {
     id: 92,
@@ -917,7 +917,7 @@ const games = [
     price: 300000,
     oldPrice: 350000,
     description: "Game hành động phiêu lưu về Batman với cốt truyện sâu sắc và lối chơi kịch tính.",
-    filterClass: ["nd", "adv", "rpg"]
+    filterClass: ["act", "adv", "rpg"]
   },
   {
       id: 93,
@@ -927,7 +927,7 @@ const games = [
       price: 600000,
       oldPrice: 720000,
       description: "Hành trình nhập vai vào một chiến binh Sparta trong thế giới Hy Lạp cổ đại rộng lớn, nơi bạn lựa chọn định mệnh của mình.",
-      filterClass: ["nd", "adv", "rpg"]
+      filterClass: ["act", "adv", "rpg"]
   },
   {
     id: 94,
@@ -937,7 +937,7 @@ const games = [
     price: 700000,
     oldPrice: 850000,
     description: "Game hành động phiêu lưu trong thế giới mở rộng lớn với robot và câu chuyện hấp dẫn.",
-    filterClass: ["adv", "nd"]
+    filterClass: ["adv", "act"]
   },
   {
     id: 95,
@@ -967,7 +967,7 @@ const games = [
     price: 500000,
     oldPrice: 650000,
     description: "Phần tiếp theo của series Dark Souls với thử thách và lối chơi đặc trưng.",
-    filterClass: ["nd", "rpg", "adv"]
+    filterClass: ["act", "rpg", "adv"]
   },
   {
     id: 98,
@@ -977,7 +977,7 @@ const games = [
     price: 450000,
     oldPrice: 600000,
     description: "Game bắn súng góc nhìn thứ nhất với cốt truyện phong phú và thế giới đầy màu sắc.",
-    filterClass: ["nd", "adv"]
+    filterClass: ["act", "adv"]
   },
   {
     id: 99,
@@ -987,7 +987,7 @@ const games = [
     price: 550000,
     oldPrice: 700000,
     description: "Game nhập vai hành động với nhiều lựa chọn và thế giới hậu tận thế rộng lớn.",
-    filterClass: ["rpg", "nd"]
+    filterClass: ["rpg", "act"]
   },
   {
     id: 100,
@@ -997,7 +997,7 @@ const games = [
     price: 480000,
     oldPrice: 600000,
     description: "Game hành động phiêu lưu với phong cách chiến đấu nhanh và cốt truyện hấp dẫn.",
-    filterClass: ["nd", "adv", "rpg"]
+    filterClass: ["act", "adv", "rpg"]
   }
 ];
 
@@ -1025,11 +1025,11 @@ function renderGames() {
       const price = g.price;
       switch (currentPriceFilter) {
         case "free": return price === 0;
-        case "20": return price > 0 && price < 20;
-        case "50": return price < 50;
-        case "100": return price < 100;
-        case "200": return price < 200;
-        case "more": return price >= 200;
+        case "50000": return price >= 0 && price <= 50000;
+        case "100000": return price >= 50000 && price <= 200000;
+        case "200000": return price >= 200000 && price <= 300000;
+        case "500000": return price >= 300000 && price <=500000;
+        case "more": return price >= 500000;
         default: return true;
       }
     });

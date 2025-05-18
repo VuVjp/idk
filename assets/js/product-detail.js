@@ -4,35 +4,34 @@
 const products = {
   "1": {
     name: "Call of Duty®: Modern Warfare® II",
-    priceOld: 150000,
-    priceNew: 100000,
+    priceOld: 890000,
+    priceNew: 690000,
     image: "assets/images/single-game.jpg",
-    description: `Game bắn súng hành động`,
-    genre: ["Hành động", "Đồng đội", "1 người chơi"],
-    tags: ["Chiến tranh", "Chiến đấu", "Hoàng gia"],
-    id: "COD MMII",
+    description: `Call of Duty®: Modern Warfare® II là một trò chơi bắn súng góc nhìn thứ nhất nổi bật với lối chơi kịch tính, đồ họa chân thực và cơ chế chiến đấu tinh tế. Người chơi sẽ tham gia vào các nhiệm vụ đầy thử thách trên khắp thế giới, từ chiến trường đô thị cho đến các khu vực chiến sự khắc nghiệt. Với chế độ chiến dịch hấp dẫn, chế độ nhiều người chơi phong phú và hệ thống vũ khí đa dạng, trò chơi mang đến trải nghiệm hành động đỉnh cao với nhịp độ nhanh và chiến thuật sáng tạo.`,
+    genre: ["Hành động", "Chiến thuật", "Mô phỏng"],
+    tags: ["rpg", "adv"],
+    id: "1",
     reviews: [
       "<b>VuVjp</b>: Game rất hay, đồ họa đỉnh cao!",
       "<b>minhtinhk5</b>: Chiến dịch hấp dẫn và nhiều chế độ chơi.",
       "<b>Bac-chan</b>: Giá hợp lý với chất lượng."
     ]
   },
-  "2": {
-    name: "Assassin's Creed® Valhalla",
-    priceOld: 30,
-    priceNew: 25,
-    image: "assets/images/assassins-creed.jpg",
-    description: `Trải nghiệm thế giới Viking tuyệt đẹp.
-Valhalla mang lại lối chơi nhập vai hấp dẫn cùng với cốt truyện phong phú.`,
-    genre: ["Phiêu lưu", "Thế giới mở"],
-    tags: ["Viking", "Cốt truyện", "Chiến đấu"],
-    id: "ACV",
+  "10": {
+    name: "HELLDIVERS™ 2",
+    priceOld:850000 ,
+    priceNew:690000 ,
+    image: "assets/images/gameDetails-Id-10.jpg",
+    description: "Helldivers 2 là trò chơi bắn súng phối hợp góc nhìn thứ ba được phát triển bởi Arrowhead Game Studios và phát hành bởi Sony Interactive Entertainment dành cho hệ máy PlayStation 5 và Windows. Trò chơi là phần tiếp nối trực tiếp của Helldivers (2015). Lấy bối cảnh thế kỷ 22, câu chuyện theo chân những chiến binh Helldivers, một lực lượng tinh nhuệ được cử đi đối phó với các mối đe dọa khác nhau nhằm bảo vệ nhân loại.",
+    genre: ["Kinh dị", "Sinh tồn", "Hành động"],
+    tags: ["horror", "sur", "nd"],
+    id: "10",
     reviews: [
-      "Cốt truyện Valhalla rất cuốn hút!",
-      "Gameplay sáng tạo, không bị lặp lại.",
-      "Cảnh quan đẹp, rất đáng chơi."
+      "<b>VuVjp</b>: Game rất hay, đồ họa đỉnh cao!",
+      "<b>minhtinhk5</b>: Chiến dịch hấp dẫn và nhiều chế độ chơi.",
+      "<b>Bac-chan</b>: Giá hợp lý với chất lượng."
     ]
-  }
+  },
 };
 
 // ----------------------
