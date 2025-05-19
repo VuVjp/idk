@@ -28,10 +28,44 @@ document.addEventListener("DOMContentLoaded", function() {
   // Xử lý submit form thanh toán
   document.getElementById("paymentForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    // Giả sử quá trình thanh toán được xử lý thành công (ví dụ: gọi API thanh toán)
-    alert("Thanh toán thành công!");
 
-    // Xóa giỏ hàng bằng cách đặt key "cart" thành mảng rỗng
+    const currentUsername = localStorage.getItem("username");
+    if (!currentUsername) {
+      alert("Không tìm thấy tài khoản của bạn!");
+      return;
+    }
+
+    // Lấy danh sách users từ localStorage
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currentUser = users.find(user => user.username === currentUsername);
+
+    if (!currentUser) {
+      alert("Không tìm thấy tài khoản của bạn!");
+      return;
+    }
+
+    // Lấy giỏ hàng hiện tại
+    let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cartItems.length === 0) {
+      alert("Giỏ hàng trống, không thể thanh toán!");
+      return;
+    }
+
+    // Tạo lịch sử đơn hàng mới
+    const newOrder = {
+      id: `ORDER-${Date.now()}`, // ID đơn hàng duy nhất
+      date: new Date().toLocaleDateString(),
+      time: new Date().toLocaleTimeString(), // Thêm thời gian giao dịch
+      total: document.getElementById("amount").value,
+      items: cartItems // Lưu chi tiết sản phẩm trong giỏ hàng
+    };
+
+    // Lưu đơn hàng vào danh sách orders của user
+    currentUser.orders = currentUser.orders || []; // Đảm bảo có mảng orders
+    currentUser.orders.push(newOrder);
+    localStorage.setItem("users", JSON.stringify(users)); // Lưu danh sách users đã cập nhật
+
+    // Xóa giỏ hàng sau khi thanh toán
     localStorage.setItem("cart", JSON.stringify([]));
 
     // Cập nhật lại giao diện giỏ hàng
@@ -44,5 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Đóng modal thanh toán
     modal.style.display = "none";
+
+    alert("Thanh toán thành công! Đơn hàng đã được lưu vào lịch sử.");
   });
 });

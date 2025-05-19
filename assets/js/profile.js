@@ -1,37 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Kiểm tra xem người dùng đã đăng nhập chưa
+    // Kiểm tra trạng thái đăng nhập
     if (localStorage.getItem("userLoggedIn") !== "true") {
         alert("Bạn cần đăng nhập để truy cập trang này!");
-        window.location.href = "login.html"; // Chuyển hướng về trang đăng nhập
+        window.location.href = "login.html";
         return;
     }
 
-    // Lấy dữ liệu người dùng từ localStorage
-    const username = localStorage.getItem("username") || "Người dùng";
-    const email = localStorage.getItem("email") || "Chưa có email";
-    const introText = localStorage.getItem("intro") || ""; 
+    const currentUsername = localStorage.getItem("username");
+    if (!currentUsername) {
+        alert("Không tìm thấy thông tin người dùng!");
+        window.location.href = "login.html";
+        return;
+    }
 
-    document.getElementById("infoName").textContent = username;
-    document.getElementById("infoEmail").textContent = email;
-    document.getElementById("introText").value = introText;
+    // Lấy danh sách users từ localStorage
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currentUser = users.find(user => user.username === currentUsername);
 
-    // Lưu giới thiệu cá nhân
+    if (!currentUser) {
+        alert("Không tìm thấy tài khoản của bạn!");
+        return;
+    }
+
+    // Hiển thị thông tin hiện tại lên giao diện
+    document.getElementById("infoName").textContent = currentUser.username;
+    document.getElementById("infoEmail").textContent = currentUser.email;
+    document.getElementById("introText").value = currentUser.intro || "";
+    document.getElementById("profileImage").src = currentUser.profileImage
+
+    // --- Cập nhật Giới thiệu ---
     document.getElementById("saveIntroBtn").addEventListener("click", function () {
         const newIntro = document.getElementById("introText").value.trim();
-        localStorage.setItem("intro", newIntro);
+        currentUser.intro = newIntro;
+        localStorage.setItem("users", JSON.stringify(users)); // Lưu danh sách users đã cập nhật
         alert("Giới thiệu đã được lưu!");
     });
 
-    // Quản lý ảnh hồ sơ riêng theo username
+    // --- Cập nhật Ảnh Hồ Sơ ---
     const profileImage = document.getElementById("profileImage");
     const uploadImage = document.getElementById("uploadImage");
     const saveImageBtn = document.getElementById("saveImageBtn");
     const editImageBtn = document.getElementById("editImageBtn");
-
-    const savedImage = localStorage.getItem(`profileImage_${username}`);
-    if (savedImage) {
-        profileImage.src = savedImage;
-    }
 
     editImageBtn.addEventListener("click", function () {
         uploadImage.style.display = "block";
@@ -41,78 +50,110 @@ document.addEventListener("DOMContentLoaded", function () {
 
     saveImageBtn.addEventListener("click", function () {
         const file = uploadImage.files[0];
-
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function (event) {
-                localStorage.setItem(`profileImage_${username}`, event.target.result);
-                profileImage.src = event.target.result;
-                alert("Ảnh hồ sơ đã được cập nhật!");
-
-                uploadImage.style.display = "none";
-                saveImageBtn.style.display = "none";
-                editImageBtn.style.display = "block";
-            };
-            reader.readAsDataURL(file);
-        } else {
+        if (!file) {
             alert("Vui lòng chọn ảnh!");
-        }
-    });
-
-    // Xử lý đăng xuất
-    document.getElementById("logoutBtn").addEventListener("click", function () {
-        localStorage.removeItem("userLoggedIn");
-        localStorage.removeItem("username");
-        localStorage.removeItem("email");
-        localStorage.removeItem("intro");
-        localStorage.removeItem(`profileImage_${username}`);
-        alert("Bạn đã đăng xuất!");
-        window.location.href = "login.html";
-    });
-
-    // Cập nhật Email & Mật khẩu
-    const updateEmailForm = document.getElementById("updateEmailForm");
-    const updatePasswordForm = document.getElementById("updatePasswordForm");
-    const newEmailInput = document.getElementById("newEmail");
-    const oldPasswordInput = document.getElementById("oldPassword");
-    const newPasswordInput = document.getElementById("newPassword");
-
-    document.getElementById("editEmailBtn").addEventListener("click", function () {
-        updateEmailForm.style.display = "block";
-        updatePasswordForm.style.display = "none";
-    });
-
-    document.getElementById("editPasswordBtn").addEventListener("click", function () {
-        updatePasswordForm.style.display = "block";
-        updateEmailForm.style.display = "none";
-    });
-
-    updateEmailForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const newEmail = newEmailInput.value.trim();
-        if (!newEmail.includes("@")) {
-            alert("Email không hợp lệ!");
             return;
         }
-        localStorage.setItem("email", newEmail);
-        alert("Email đã được cập nhật!");
+
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            const dataURL = event.target.result;
+            currentUser.profileImage = dataURL;
+            localStorage.setItem("users", JSON.stringify(users)); // Lưu danh sách users đã cập nhật
+            profileImage.src = dataURL;
+            alert("Ảnh hồ sơ đã được cập nhật!");
+
+            uploadImage.style.display = "none";
+            saveImageBtn.style.display = "none";
+            editImageBtn.style.display = "block";
+        };
+        reader.readAsDataURL(file);
     });
 
-    updatePasswordForm.addEventListener("submit", function (event) {
+    // --- Cập nhật Email ---
+    document.getElementById("updateEmailForm").addEventListener("submit", function (event) {
         event.preventDefault();
-        const oldPassword = oldPasswordInput.value.trim();
-        const newPassword = newPasswordInput.value.trim();
-        const savedPassword = localStorage.getItem("userPassword");
 
-        if (oldPassword !== savedPassword) {
+        const newEmail = document.getElementById("newEmail").value.trim();
+
+        // Kiểm tra email hợp lệ
+        if (!newEmail.includes("@")) {
+            alert("Email không hợp lệ! Vui lòng nhập email hợp lệ.");
+            return;
+        }
+
+        // Cập nhật email mới
+        currentUser.email = newEmail;
+        localStorage.setItem("users", JSON.stringify(users)); // Lưu danh sách users đã cập nhật
+        document.getElementById("infoEmail").textContent = newEmail;
+        document.getElementById("newEmail").value = ""; // Xóa nội dung input sau khi cập nhật
+        alert("Email đã được cập nhật thành công!");
+    });
+
+    // --- Cập nhật Mật khẩu ---
+    document.getElementById("updatePasswordForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const oldPassword = document.getElementById("oldPassword").value.trim();
+        const newPassword = document.getElementById("newPassword").value.trim();
+
+        // Kiểm tra mật khẩu hiện tại
+        if (oldPassword !== currentUser.password) {
             alert("Mật khẩu hiện tại không đúng!");
             return;
         }
+
+        // Kiểm tra mật khẩu mới
         if (newPassword.length < 6) {
             alert("Mật khẩu mới phải có ít nhất 6 ký tự!");
             return;
         }
-        localStorage.setItem("userPassword", newPassword);
-        alert("Mật khẩu đã được cập nhật!");
+
+        // Cập nhật mật khẩu mới
+        currentUser.password = newPassword;
+        localStorage.setItem("users", JSON.stringify(users)); // Lưu danh sách users đã cập nhật
+        document.getElementById("oldPassword").value = "";
+        document.getElementById("newPassword").value = "";
+        alert("Mật khẩu đã được cập nhật thành công!");
+    });
+
+    // --- Đăng xuất (Không xóa ảnh hồ sơ & intro) ---
+    document.getElementById("logoutBtn").addEventListener("click", function () {
+        localStorage.removeItem("userLoggedIn");
+        localStorage.removeItem("username");
+        localStorage.removeItem("email");
+        alert("Bạn đã đăng xuất!");
+        window.location.href = "login.html";
     });
 });
+function updateOrderHistory() {
+    const orderList = document.getElementById("orderList");
+    const currentUsername = localStorage.getItem("username");
+    if (!orderList || !currentUsername) return;
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currentUser = users.find(user => user.username === currentUsername);
+
+    orderList.innerHTML = "";
+
+    if (currentUser.orders && currentUser.orders.length > 0) {
+        currentUser.orders.forEach((order, orderIndex) => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `<strong>Mã đơn:</strong> ${order.id} - <strong>Ngày:</strong> ${order.date} ${order.time} - <strong>Tổng:</strong> ${order.total}`;
+
+            const gameList = document.createElement("ul");
+            order.items.forEach((game, i) => {
+                const gameItem = document.createElement("li");
+                gameItem.textContent = `#Trò chơi ${i + 1} - ${game.name} - ${game.price.toLocaleString('vi-VN')} VNĐ`;
+                gameList.appendChild(gameItem);
+            });
+
+            listItem.appendChild(gameList);
+            orderList.appendChild(listItem);
+        });
+    } else {
+        orderList.innerHTML = "<li>Chưa có đơn hàng.</li>";
+    }
+}
+
+updateOrderHistory(); // Hiển thị lịch sử đơn hàng khi tải trang
