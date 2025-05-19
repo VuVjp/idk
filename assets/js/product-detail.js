@@ -49,7 +49,7 @@ const products = {
   },
   "4": {
     name: "Split Fiction",
-    priceOld: 440000,
+    priceOld: "",
     priceNew: 440000,
     image: "assets/images/gameDetails-Id-4.jpg",
     description:`Split Fiction là một trò chơi hành động - phiêu lưu hợp tác hai người, được phát triển bởi Hazelight Studios và phát hành bởi Electronic Arts dưới nhãn EA Originals. Trò chơi ra mắt vào ngày 6 tháng 3 năm 2025 trên các nền tảng PlayStation 5, Xbox Series X/S và PC, và dự kiến phát hành trên Nintendo Switch 2 vào ngày 5 tháng 6 năm 2025. `,
@@ -79,7 +79,7 @@ const products = {
   },
   "6": {
     name: "Kingdom Come II",
-    priceOld: 780000,
+    priceOld: '',
     priceNew: 780000,
     image: "assets/images/gameDetails-Id-6.jpg",
     description:`Kingdom Come: Deliverance II là phần tiếp theo của tựa game nhập vai hành động nổi tiếng năm 2018, được phát triển bởi Warhorse Studios và phát hành bởi Deep Silver. Trò chơi chính thức ra mắt vào ngày 4 tháng 2 năm 2025 trên các nền tảng PlayStation 5, Xbox Series X|S và PC . Người chơi tiếp tục nhập vai Henry, con trai của một thợ rèn, trong bối cảnh Bohemia thế kỷ 15 đang chìm trong hỗn loạn vì chiến tranh và xung đột quyền lực. Câu chuyện tập trung vào các chủ đề trả thù, phản bội và khám phá, với các lựa chọn đạo đức ảnh hưởng trực tiếp đến diễn biến của cốt truyện. Thế giới trong game được mở rộng gấp đôi so với phần đầu, bao gồm hai khu vực chính: Trosky và Kuttenberg, mang đến trải nghiệm khám phá sâu sắc và đa dạng hơn`,
@@ -124,7 +124,7 @@ const products = {
   },
   "9": {
     name: "R.E.P.O",
-    priceOld: 310000,
+    priceOld: "",
     priceNew: 310000,
     image: "assets/images/gameDetails-Id-9.jpg",
     description:`Trong R.E.P.O., người chơi vào vai một robot dưới sự điều khiển của một trí tuệ nhân tạo bí ẩn, với nhiệm vụ thu thập và vận chuyển các vật phẩm có giá trị từ những cơ sở bỏ hoang đầy rẫy nguy hiểm. Trò chơi hỗ trợ tối đa 6 người chơi hợp tác trực tuyến, yêu cầu sự phối hợp chặt chẽ và chiến lược để hoàn thành nhiệm vụ.`,
@@ -185,8 +185,8 @@ const products = {
   },
   "13": {
     name: "Dead By Daylight",
-    priceOld: 490000,
-    priceNew: 950000,
+    priceOld: 490000 ,
+    priceNew:330000,
     image: "assets/images/gameDetails-Id-13.jpg",
     description:`Dead by Daylight là tựa game sinh tồn kinh dị nhiều người chơi, phát triển bởi Behaviour Interactive. Trong game, một người chơi vào vai Kẻ Sát Nhân (Killer), trong khi bốn người còn lại là Người Sống Sót (Survivors), cùng nhau đối mặt trong các trận đấu 4v1 căng thẳng.`,
     genre: ["Thể thao", "Mô phỏng"],
@@ -233,7 +233,7 @@ const products = {
     priceOld: 1050000,
     priceNew: 890000,
     image: "assets/images/gameDetails-Id-16.jpg",
-    description:``,
+    description:`Kiệt tác định hình thể loại Resident Evil 2 trở lại, được xây dựng lại hoàn toàn từ đầu để có trải nghiệm tường thuật sâu sắc hơn. Sử dụng RE Engine độc ​​quyền của Capcom, Resident Evil 2 mang đến một góc nhìn mới về câu chuyện kinh dị sinh tồn kinh điển với hình ảnh chân thực đến nghẹt thở, âm thanh nhập vai thót tim, camera sau vai mới và các điều khiển hiện đại trên các chế độ chơi từ trò chơi gốc.`,
     genre: ["Hành động", "Kinh dị"],
     tags: ["act", "horror"],
     id: "16",
@@ -275,8 +275,8 @@ const products = {
   },
   "19": {
     name: "Dragon Kingdom",
-    priceOld: 602701,
-    priceNew: 468498,
+    priceOld: 602000,
+    priceNew: 468000,
     image: "assets/images/gameDetails-Id-19.jpg",
     description:`Trò chơi kết hợp giữa nông trại, khai thác mỏ và câu cá, với điểm nhấn là việc nuôi dưỡng và đồng hành cùng rồng. Người chơi có thể khám phá thế giới mở, thu thập tài nguyên và xây dựng cuộc sống của riêng mình.`,
     genre: ["Kinh dị"],
@@ -1044,8 +1044,8 @@ const products = {
     priceNew: 450000,
     image: "assets/images/gameDetails-Id-70.jpg",
     description:`Được chơi theo góc nhìn thứ nhất với tư cách là Jack the Ghostrunner, người chơi phải vượt qua các môi trường nguy hiểm bằng cách lao, nhảy, chạy trên tường, vật lộn và trượt. Người chơi cũng sẽ chạm trán với kẻ thù, phải xử lý cẩn thận, vì cả kẻ thù và người chơi đều có thể bị giết chỉ bằng một đòn. Jack có thể sử dụng một cơ chế gọi là Sensory Boost, cho phép anh ta làm chậm thời gian và né tránh cũng như làm chệch hướng các viên đạn giữa không trung. Khi người chơi tiến triển trong câu chuyện, họ sẽ mở khóa các khả năng và nâng cấp mới, họ có thể áp dụng bằng cách sử dụng các mảnh giống như tetromino trên hệ thống lưới.`,
-    genre: [600000],
-    tags: [450000],
+    genre: ["Hành động","Phiêu lưu"],
+    tags: ["act", "adv"],
     id: "70",
     reviews: [
       "<b>VuVjp</b>: Game rất hay, đồ họa đỉnh cao!",
@@ -1088,7 +1088,10 @@ function renderProductDetail() {
 
   // Tiêu đề và giá sản phẩm
   document.querySelector(".col-lg-6.align-self-center h4").innerText = product.name;
-  document.querySelector(".price").innerHTML = `<em>${product.priceOld}</em> ${product.priceNew}`;
+  document.querySelector(".price").innerHTML = product.priceNew === 0 
+  ? `<em>${product.priceOld.toLocaleString()} đ</em> Miễn phí` 
+  : `<em>${product.priceOld.toLocaleString()} đ</em> ${product.priceNew.toLocaleString()} đ`;
+
 
   // Mô tả sản phẩm (xử lý xuống dòng nếu có)
   const descHTML = product.description

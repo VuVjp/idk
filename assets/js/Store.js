@@ -184,8 +184,8 @@ const games = [
   name: "Dragon Kingdom",
   category: ["Kinh dị"],
   img: "assets/images/dragon-kingdom.jpg",
-  price: 468498,
-  oldPrice: 602701,
+  price: 468000,
+  oldPrice: 602000,
   description: "Xây dựng đế chế của bạn và đánh bại mọi kẻ thù.",
   filterClass: ["horror"]
 },
@@ -1058,7 +1058,7 @@ function renderGames() {
       <p class="card-text flex-grow-1">${game.description}</p>
       <p class="card-text fw-bold">
         ${game.oldPrice && game.oldPrice > game.price ? `<span style="text-decoration: line-through; color: #888; margin-right: 8px;">${game.oldPrice.toLocaleString()} đ</span>` : ''}
-        ${game.price === 0 ? 'Free' : `${game.price.toLocaleString()} đ`}
+        ${game.price === 0 ? 'Miễn phí' : `${game.price.toLocaleString()} đ`}
       </p>
       <a href="product-details.html?id=${game.id}" class="btn btn-primary rounded-pill mt-auto buy-now-btn">Mua ngay</a>
     </div>
