@@ -77,9 +77,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h3>Tiêu đề bài viết tin tức</h3>
-                        <span class="breadcrumb"><a href="index.html">Trang chủ</a> > <a href="news.html">Tin tức</a> > Tiêu
-                            đề bài viết</span>
+                       <h3 id="news-title">Tiêu đề bài viết tin tức</h3>
+                        <span class="breadcrumb">
+                    <a href="index.html">Trang chủ</a> > <a href="news.html">Tin tức</a> > <span id="breadcrumb-title">Tiêu đề bài viết</span>
+                    </span>
                     </div>
                 </div>
             </div>
@@ -90,31 +91,23 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="news-image mb-4">
-                            <img src="assets/images/news-image.jpg" alt="Ảnh tin tức" class="img-fluid" />
+                            <img id="news-image" src="assets/images/news-image.jpg" alt="Ảnh tin tức" class="img-fluid" />
                         </div>
-                        <div class="news-content">
-                            <p>
-                                Đây là phần nội dung chi tiết của bài viết tin tức. Bạn có thể viết các đoạn văn bản, chèn
-                                hình ảnh, video hoặc các thành phần khác phù hợp với nội dung bài viết.
-                            </p>
-                            <p>
-                                Ví dụ: Nội dung chi tiết về sự kiện, mô tả, nhận xét, phân tích, hoặc bất cứ thứ gì liên
-                                quan đến
-                                chủ đề tin tức.
-                            </p>
-                            <!-- Thêm nhiều đoạn nội dung khác nếu cần -->
+                       <div id="news-content" class="news-content">
+                        <p>Đây là phần nội dung chi tiết của bài viết...</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-4">
+                   <div class="col-lg-4 col-md-12 mb-4">
                         <!-- Có thể để sidebar nếu cần, ví dụ: tin tức liên quan, bài viết mới, quảng cáo... -->
+                        <!-- Tin liên quan -->
                         <div class="related-news">
-                            <h5>Tin tức liên quan</h5>
-                            <ul>
-                                <li><a href="news-detail.html">Tin liên quan 1</a></li>
-                                <li><a href="news-detail.html">Tin liên quan 2</a></li>
-                                <li><a href="news-detail.html">Tin liên quan 3</a></li>
-                            </ul>
+                        <h5>Tin tức liên quan</h5>
+                        <div class="row" id="related-news-list">
+                        <!-- Tin liên quan sẽ được render tại đây -->
+                        </div>
+                        </div>
+                        </ul>
                         </div>
                     </div>
                 </div>
