@@ -26,7 +26,7 @@ function registerUser() {
     }
 
     // Lưu mật khẩu trực tiếp vào localStorage (KHÔNG MÃ HÓA)
-    users.push({ username, email, password }); 
+    users.push({ username, email, password, profileImage: "assets/images/User.jpg" });
     localStorage.setItem("users", JSON.stringify(users));
 
     alert("Tạo tài khoản thành công!");
