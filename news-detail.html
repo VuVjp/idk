@@ -1,0 +1,186 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+        <title>Chi tiết tin tức - MaestVN</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="assets/css/fontawesome.css" />
+        <link rel="stylesheet" href="assets/css/MaestVN.css" />
+        <link rel="stylesheet" href="assets/css/owl.css" />
+        <link rel="stylesheet" href="assets/css/animate.css" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    </head>
+
+    <body>
+
+        <!-- ***** Preloader Start ***** -->
+        <div id="js-preloader" class="js-preloader">
+            <div class="preloader-inner">
+                <span class="dot"></span>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Preloader End ***** -->
+
+        <!-- ***** Header Area Start ***** -->
+        <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <a href="index.html" class="logo">
+                                <img src="assets/images/logo.png" alt="" style="width: 158px;" />
+                            </a>
+
+                            <ul class="nav" id="navMenu">
+                                <li><a href="index.html">Trang chủ</a></li>
+                                <li><a href="shop.html">Cửa Hàng</a></li>
+                                <li><a href="news.html">Tin tức</a></li>
+                                <li><a href="privacy.html">Chính sách</a></li>
+                                <li><a href="aboutus.html">Về chúng tôi</a></li>
+                                <li><a href="contact.html">Liên hệ với chúng tôi</a></li>
+                                <li class="nav-item position-relative" style="width: 70px; height: 40px;">
+                                    <a href="cart.html" id="cart-icon"
+                                        class="nav-link d-flex align-items-center justify-content-center p-0 w-100 h-100 position-relative">
+                                        <i class="fa fa-shopping-cart fa-lg"></i>
+                                        <span id="cart-count"
+                                            class="badge bg-danger rounded-circle position-absolute"></span>
+                                    </a>
+                                </li>
+                                <li id="loginNav"><a href="login.html">Đăng nhập</a></li>
+                            </ul>
+                            <a class="menu-trigger">
+                                <span>Menu</span>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ***** Header Area End ***** -->
+
+        <div class="page-heading header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3>Tiêu đề bài viết tin tức</h3>
+                        <span class="breadcrumb"><a href="index.html">Trang chủ</a> > <a href="news.html">Tin tức</a> > Tiêu
+                            đề bài viết</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-detail section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="news-image mb-4">
+                            <img src="assets/images/news-image.jpg" alt="Ảnh tin tức" class="img-fluid" />
+                        </div>
+                        <div class="news-content">
+                            <p>
+                                Đây là phần nội dung chi tiết của bài viết tin tức. Bạn có thể viết các đoạn văn bản, chèn
+                                hình ảnh, video hoặc các thành phần khác phù hợp với nội dung bài viết.
+                            </p>
+                            <p>
+                                Ví dụ: Nội dung chi tiết về sự kiện, mô tả, nhận xét, phân tích, hoặc bất cứ thứ gì liên
+                                quan đến
+                                chủ đề tin tức.
+                            </p>
+                            <!-- Thêm nhiều đoạn nội dung khác nếu cần -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <!-- Có thể để sidebar nếu cần, ví dụ: tin tức liên quan, bài viết mới, quảng cáo... -->
+                        <div class="related-news">
+                            <h5>Tin tức liên quan</h5>
+                            <ul>
+                                <li><a href="news-detail.html">Tin liên quan 1</a></li>
+                                <li><a href="news-detail.html">Tin liên quan 2</a></li>
+                                <li><a href="news-detail.html">Tin liên quan 3</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần comment -->
+        <div class="more-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+
+
+
+                        <!-- Form comment -->
+                    <div class="d-flex align-items-start gap-2 mb-3">
+                   <img id="inputUserAvatar" src="..." class="rounded-circle me-2" style="width:40px; height:40px; object-fit:cover;">
+                    <textarea id="commentInput" class="form-control flex-grow-1" rows="3" maxlength="100" placeholder="Viết bình luận..." style="max-height:120px; overflow-y:auto; resize:vertical;"></textarea>
+                <button id="submitCommentBtn" class="btn btn-primary" type="button">Gửi</button>
+                    </div>
+
+                        <!-- Danh sách comment -->
+                        <div id="oldCommentsContainer" class="comments-list text-start">
+                            <p>loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="col-lg-12">
+                    <div class="footer-selection">
+                        <a href="https://www.facebook.com/maetvngames?locale=vi_VN" target="_blank"><img
+                                src="././assets/images/facebook-icon.png" alt="Facebook" /></a>
+                        <a href="https://www.instagram.com/maetsvngames/?fbclid=IwY2xjawKOUMhleHRuA2FlbQIxMABicmlkETFtMzczZ0ZQazZtZ1E1RmNaAR7pi_HYbNtTuZ-wf9ZGjnZkXgLPFu3TIkaKyU3SFYhTCnlmiZ-zdnMU2SqULQ_aem_yPWWGt2sQI2IMx8C_ZlFBQ#"
+                            target="_blank"><img src="././assets/images/Instagram_icon.png" alt="Instagram" /></a>
+                        <a href="https://x.com/maetsvngames?fbclid=IwY2xjawKOUrdleHRuA2FlbQIxMABicmlkETFtMzczZ0ZQazZtZ1E1RmNaAR7pi_HYbNtTuZ-wf9ZGjnZkXgLPFu3TIkaKyU3SFYhTCnlmiZ-zdnMU2SqULQ_aem_yPWWGt2sQI2IMx8C_ZlFBQ"
+                            target="_blank"><img src="././assets/images/X-icon.png" alt="X" /></a>
+                        <a href="https://g.co/kgs/Bg7F1dk" target="_blank"><img src="././assets/images/GoogleIcon.png"
+                                alt="GoogleIcon" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <li><span>Địa chỉ: </span>Đường Bùi Hữu Nghĩa, Bửu Hòa, thành phố Biên Hòa, Đồng Nai</li>
+                    <li><span>SĐT: </span> +123 456 7890</li>
+                    <li><span>Email: </span> maetsvn@contact.com</li>
+                </div>
+                <div class="col-lg-12">
+                    <p><a rel="nofollow" href="aboutus.html" target="_blank">Copyright © 2025 MaestVN.</a></p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/isotope.min.js"></script>
+        <script src="assets/js/owl-carousel.js"></script>
+        <script src="assets/js/counter.js"></script>
+        <script src="assets/js/custom.js"></script>
+        <script src="assets/js/news-detail.js"></script>
+        <!-- Bạn có thể tạo file JS riêng để xử lý phần bình luận ở đây -->
+        <script src="assets/js/comments.js"></script>
+
+    </body>
+
+    </html>
