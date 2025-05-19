@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("users", JSON.stringify(users)); // Lưu danh sách users đã cập nhật
         document.getElementById("infoEmail").textContent = newEmail;
         document.getElementById("newEmail").value = ""; // Xóa nội dung input sau khi cập nhật
+        localStorage.setItem("email", newEmail);
         alert("Email đã được cập nhật thành công!");
     });
 
