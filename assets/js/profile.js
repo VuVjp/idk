@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("infoName").textContent = currentUser.username;
     document.getElementById("infoEmail").textContent = currentUser.email;
     document.getElementById("introText").value = currentUser.intro || "";
-    document.getElementById("profileImage").src = currentUser.profileImage 
+    document.getElementById("profileImage").src = currentUser.profileImage
 
     // --- Cập nhật Giới thiệu ---
     document.getElementById("saveIntroBtn").addEventListener("click", function () {
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Vui lòng chọn ảnh!");
             return;
         }
-        
+
         const reader = new FileReader();
         reader.onload = function (event) {
             const dataURL = event.target.result;
@@ -126,3 +126,34 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "login.html";
     });
 });
+function updateOrderHistory() {
+    const orderList = document.getElementById("orderList");
+    const currentUsername = localStorage.getItem("username");
+    if (!orderList || !currentUsername) return;
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currentUser = users.find(user => user.username === currentUsername);
+
+    orderList.innerHTML = "";
+
+    if (currentUser.orders && currentUser.orders.length > 0) {
+        currentUser.orders.forEach((order, orderIndex) => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `<strong>Mã đơn:</strong> ${order.id} - <strong>Ngày:</strong> ${order.date} ${order.time} - <strong>Tổng:</strong> ${order.total}`;
+
+            const gameList = document.createElement("ul");
+            order.items.forEach((game, i) => {
+                const gameItem = document.createElement("li");
+                gameItem.textContent = `#Trò chơi ${i + 1} - ${game.name} - ${game.price.toLocaleString('vi-VN')} VNĐ`;
+                gameList.appendChild(gameItem);
+            });
+
+            listItem.appendChild(gameList);
+            orderList.appendChild(listItem);
+        });
+    } else {
+        orderList.innerHTML = "<li>Chưa có đơn hàng.</li>";
+    }
+}
+
+updateOrderHistory(); // Hiển thị lịch sử đơn hàng khi tải trang

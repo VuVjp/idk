@@ -1057,8 +1057,8 @@ function renderGames() {
       <h5 class="card-title">${game.name}</h5>
       <p class="card-text flex-grow-1">${game.description}</p>
       <p class="card-text fw-bold">
-        ${game.oldPrice && game.oldPrice > game.price ? `<span style="text-decoration: line-through; color: #888; margin-right: 8px;">${game.oldPrice.toLocaleString()} đ</span>` : ''}
-        ${game.price === 0 ? 'Miễn phí' : `${game.price.toLocaleString()} đ`}
+        ${game.oldPrice && game.oldPrice > game.price ? `<span style="text-decoration: line-through; color: #888; margin-right: 8px;">${game.oldPrice.toLocaleString()} VNĐ</span>` : ''}
+        ${game.price === 0 ? 'Miễn phí' : `${game.price.toLocaleString()} VNĐ`}
       </p>
       <a href="product-details.html?id=${game.id}" class="btn btn-primary rounded-pill mt-auto buy-now-btn">Mua ngay</a>
     </div>

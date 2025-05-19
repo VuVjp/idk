@@ -1195,7 +1195,7 @@ function renderCart() {
             <img src="${item.image}" alt="${item.name}">
             <div class="down-content">
               <h4>${item.name}</h4>
-              <span class="category">Giá: ${item.price.toLocaleString()} đ</span>
+              <span class="category">Giá: ${item.price.toLocaleString()} VNĐ</span>
               <p>Số lượng: ${item.quantity}</p>
               <button class="btn btn-danger btn-sm" onclick="removeItem(${index})">Xóa</button>
             </div>
@@ -1205,7 +1205,7 @@ function renderCart() {
     `;
   });
 
-  cartTotal.textContent = totalPrice.toLocaleString() + " đ";
+  cartTotal.textContent = totalPrice.toLocaleString() + " VNĐ";
 }
 
 // Hàm xóa sản phẩm khỏi giỏ hàng và cập nhật lại localStorage
