@@ -1880,3 +1880,10 @@ footer {
   object-fit: cover !important;
   aspect-ratio: 1 / 1;
 }
+.truncate-one-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block; /* Đảm bảo hiển thị như khối để tính toán đúng độ rộng */
+  width: 100%;    /* Cần thiết để dấu "..." hiển thị đúng */
+}

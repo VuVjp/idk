@@ -11,7 +11,18 @@ const newsData = {
     title: "Game HOT vừa ra mắt: HELL DIVERS 2",
     image: "assets/images/assassin-creed.jpg",
     content: `HELLDIVERS 2 đã chính thức lên kệ! Trò chơi mang đến trải nghiệm co-op đỉnh cao, đồ họa sắc nét và gameplay lôi cuốn. <br><br>Hãy trải nghiệm ngay hôm nay!`
+  },
+  "3": {
+    title: "Tin Thứ 3: tiêu đề dài ngoằng. skibidi toilet Tin Thứ 3: tiêu đề dài ngoằng. skibidi toilet Tin Thứ 3: tiêu đề dài ngoằng. skibidi toilet",
+    image: "assets/images/assassin-creed.jpg",
+    content: `HELLDIVERS 2 đã chính thức lên kệ! Trò chơi mang đến trải nghiệm co-op đỉnh cao, đồ họa sắc nét và gameplay lôi cuốn. <br><br>Hãy trải nghiệm ngay hôm nay!`
+  },
+  "4": {
+    title: "Tin Thứ 4 cũng là tieu de dai ngoang Thứ 4 cũng là tieu de dai ",
+    image: "assets/images/assassin-creed.jpg",
+    content: `HELLDIVERS 2 đã chính thức lên kệ! Trò chơi mang đến trải nghiệm co-op đỉnh cao, đồ họa sắc nét và gameplay lôi cuốn. <br><br>Hãy trải nghiệm ngay hôm nay!`
   }
+  
 };
 
 // ----------------------
@@ -50,17 +61,19 @@ function renderRelatedNews(currentId) {
 
   entries.forEach(([id, news]) => {
     const col = document.createElement("div");
-    col.className = "col-12 mb-3"; // nhỏ lại, 1 tin 1 dòng, có thể chỉnh lại class theo ý bạn
+    col.className = "col-12 mb-3";
 
-    col.innerHTML = `
-      <div class="card h-100 shadow-sm rounded-4 overflow-hidden d-flex flex-row align-items-center" style="cursor:pointer;">
-        <img src="${news.image}" alt="${news.title}" class="rounded-start-4" style="width: 100px; height: 70px; object-fit: cover;" />
-        <div class="card-body d-flex flex-column justify-content-center ps-3 pe-2 py-2">
-          <h6 class="card-title mb-2" style="font-size: 0.9rem;">${news.title}</h6>
-          <a href="news-detail.html?id=${id}" class="btn btn-outline-primary btn-sm rounded-pill px-3">Xem chi tiết</a>
-        </div>
+       col.innerHTML = `
+  <div class="card shadow-sm rounded-4 overflow-hidden d-flex flex-row align-items-center" style="cursor:pointer; min-height: 80px;">
+    <img src="${news.image}" alt="${news.title}" class="rounded-start-4 flex-shrink-0" style="width: 100px; height: 70px; object-fit: cover;" />
+    <div class="card-body ps-3 pe-2 py-2 w-100 d-flex flex-column">
+      <h6 class="card-title mb-2 truncate-one-line" style="font-size: 0.9rem;">${news.title}</h6>
+      <div class="mt-auto">
+        <a href="news-detail.html?id=${id}" class="btn btn-outline-primary btn-sm rounded-pill px-3">Xem chi tiết</a>
       </div>
-    `;
+    </div>
+  </div>
+`;
 
     // Thêm click vào cả card để cũng mở trang chi tiết
     col.querySelector(".card").addEventListener("click", () => {
