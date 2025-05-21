@@ -1,3 +1,41 @@
+async function doCheckout() {
+  const cart = JSON.parse(localStorage["cart"]);
+  const mail = JSON.parse(localStorage["users"])[0]["email"];
+  const today = Math.floor(Date.now() / 1000);
+
+  var items = [];
+
+  if (cart.length < 1) {
+    return false;
+  }
+
+  cart.forEach(e => {
+    items.push({
+      "name": e["name"],
+      "price": e["price"],
+      "quantity": e["quantity"],
+    });
+  });
+
+  const post_data = `email=${mail}&date=${today}&data=${JSON.stringify(items)}`;
+
+  const f = await fetch("/api/checkout.php", {method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: post_data});
+
+  if (!f.ok) {
+    alert("Không thể thanh toán!");
+    return;
+  }
+
+  const resp = await f.json();
+
+  if (!resp["code"]) {
+    alert(`Lỗi: ${resp["msg"]}`);
+    window.location.href = "/contact.html"
+  }
+
+  return;
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   // Phần checkout popup
   const checkoutBtn = document.getElementById("checkoutBtn");
@@ -7,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Khi nhấn nút "Thanh toán", hiển thị modal popup
   checkoutBtn.addEventListener("click", function(e) {
     e.preventDefault();
+    doCheckout();
     // Giả sử số tiền tổng được cập nhật trong #cart-total, ta cập nhật vào input amount
     const cartTotal = document.getElementById("cart-total").innerText || "0";
     document.getElementById("amount").value = cartTotal;
@@ -78,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Đóng modal thanh toán
     modal.style.display = "none";
-
     alert("Thanh toán thành công! Đơn hàng đã được lưu vào lịch sử.");
   });
 });
